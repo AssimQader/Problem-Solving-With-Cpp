@@ -1,0 +1,72 @@
+
+//PROBLEM LINK:  https://www.urionlinejudge.com.br/judge/en/problems/view/1074
+
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int number,numbert;
+	cout << "Enter the total of numbers that will be tested: " << "\n";
+	cin >> number;
+
+	for (int i = 1; i <= number; i++)
+	{
+		if (number < 10000)
+		{
+			cin >> numbert;
+			if (numbert % 2 == 0 && numbert > 0)
+				cout << "EVEN POSITIVE" << endl;
+			else if (numbert % 2 == 0 && numbert < 0)
+				cout << "EVEN NEGATIVE" << endl;
+			else if (numbert % 2 != 0 && numbert > 0)
+				cout << "ODD POSITIVE" << endl;
+			else if (numbert % 2 != 0 && numbert < 0)
+				cout << "ODD NEGATIVE" << endl;
+			else if (numbert == 0)
+				cout << "NULL" << endl;
+
+		}
+	}
+}
+____________________________________________________________________________
+
+//ANOTHER ACCEPTED ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+
+{
+	int number,numbert;
+	cin >> number;
+
+	if (number < 10000)
+	{
+		for (int i = 1; i <= number; i++)
+		{
+			cin >> numbert;
+			if (numbert % 2 == 0) //even
+			{
+				if (numbert > 0) //positive
+					cout << "EVEN POSITIVE" << endl;
+				else if (numbert < 0) //negative
+					cout << "EVEN NEGATIVE" << endl;
+			}
+
+			if (numbert % 2 != 0) //odd
+			{
+				if (numbert > 0)
+					cout << "ODD POSITIVE" << endl;
+				else if (numbert < 0)
+					cout << "ODD NEGATIVE" << endl;
+			}
+
+			if (numbert == 0) //null
+			{
+				cout << "NULL" << endl;
+			}
+		}
+	}
+}
