@@ -55,4 +55,5 @@ int main()
 	}
 }
 
-- The difference here is we delete the two integers int mini=min(m, n);  and int maxi = max(m, n); and put min(m, n) and max(m, n) direct in the condition of for loop… so I saved more space from memory.  
+- The difference here is I deleted the two integers "int mini=min(m, n)"  and "int maxi = max(m, n)",
+  and put min(m, n) and max(m, n) directly in the condition of for loop… so I saved more space from memory.  
