@@ -1,0 +1,58 @@
+
+//PROBLEM LINK:  https://www.urionlinejudge.com.br/judge/en/problems/view/1101
+
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+#include<algorithm>
+
+int main()
+{
+	int m, n;
+	cin >> m >> n;  
+
+	while ((m !=0 && m>0) && (n !=0 && n>0) )  //if m and n are not 0 and not negative value.
+	{
+		int sum = 0;  //should put it inside the scope of while loop to create every time a new int sum equal to 0, deleting the last stored value in it.
+
+		int mini = min(m, n);   int maxi = max(m, n); 
+
+			for (int i = mini; i <= maxi; i++)  //start "testing" from the minimum number, ending with the maximum number.
+			{
+				sum = sum + i; 
+				cout << i << " "; 
+	         }
+		cout<<"Sum =" << sum << endl;
+
+		cin >> m >> n; //re-input two numbers and do what is above every time, until the user enter 0 or negative number, then the program will stop.
+	}
+}
+_____________________________________________________________
+
+//SAME ANSWER IN BETTER WAY:
+
+#include<iostream>
+using namespace std;
+#include<algorithm>
+
+int main()
+{
+	int m = 0, n = 0;
+	cin >> m >> n;  
+
+	while ((m !=0 && m>0) && (n !=0 && n>0) )
+	{
+		int sum = 0; 
+		for (int i = min(m, n); i <= max(m, n); i++)
+		{
+			cout << i << " ";
+			sum = sum + i;
+		}
+			cout<<"Sum=" << sum << endl;
+
+			cin >> m >> n; 
+	}
+}
+
+- The difference here is we delete the two integers int mini=min(m, n);  and int maxi = max(m, n); and put min(m, n) and max(m, n) direct in the condition of for loop… so I saved more space from memory.  
