@@ -1,0 +1,24 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1973
+
+//ANSWER: IN C : 
+
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+	double volum, diameter;
+	double area, high;
+
+	while ( scanf("%lf%lf", &volum, &diameter) != EOF )     // %lf is the format that store the double value. 
+	{
+		area = (3.14 / 4) * (diameter * diameter);
+		high = volum / area;
+
+		printf("ALTURA = %.2lf\n", high);
+		printf("AREA = %.2lf\n", area);
+
+               // " %.2 " is a format to show only two numbers after the decimal point, it work as ( fixed; setprecision(2); in cpp )
+	}
+}
