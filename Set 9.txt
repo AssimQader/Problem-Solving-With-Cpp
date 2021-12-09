@@ -1,0 +1,39 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1858
+
+//ANSWER: 
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n;  //test: 4      
+
+	int* arr_hits = new int[n]; 
+
+	//THE ALGORISM:
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr_hits[i];   //test: 8 7 1 0
+	}
+
+	int i = 0, mini = i;
+	for (; i < n; i++)
+	{
+		if ((i + 1) < n)  
+		{
+		     if (arr_hits[mini] > arr_hits[i + 1])
+			   mini = i + 1; 
+		}
+		else
+		   break;
+	}
+
+	cout << mini + 1 << "\n";   //output: 4 refer to the number 0  with the natural counting from 1,2,3,.....
+	delete& arr_hits;  
+}
+
+
+    
