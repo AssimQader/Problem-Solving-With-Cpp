@@ -2,7 +2,6 @@
 //PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1984
 //ANSWER:
 
-
 /* How to reverse an integer number? */
 
 #include<iostream>
@@ -12,7 +11,7 @@ using namespace std;
 void RevNum_WithZeros()
 {
 	char num[100];
-	cin >> num;    //test 0125788394  ---> 10 digits
+	cin >> num;    //test: 0125788394  -->  10 digits
 
 	char temp;    //variable “temp” is for swap processe.
 	int lengthOfNum = strlen(num);    //test: 10, store the length of the array "num" when the user input his number. 
@@ -24,11 +23,11 @@ void RevNum_WithZeros()
 		num[i] = num[j];
 		num[j] = temp;
 	}
-	cout << num << endl;
+	cout << num << endl;   //Output: 4938875210 
 }
 
 
 int main()
 {
-	RevNum_WithZeros();
+	RevNum_WithZeros(); 
 }
