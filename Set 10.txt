@@ -1,0 +1,39 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1180
+
+//ANSWER: 
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n; 
+
+	int* arr = new int[n];  
+
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];     //test: 10 24 3 1 
+
+	int i = 0;
+	int positionI = 0;
+	int smalestele = arr[i];   //creating a variable "smalestele" and assume that the smallest element in array is the first element(10).
+	for (; i < n; i++)
+	{
+		if (smalestele > arr[i])
+		{
+			smalestele = arr[i];
+			positionI = i;
+		} 
+
+	}           /* test1: |10>10 flase, smalestele =10, positionI=0|
+                       test2: |10>24  false, smalestele =10, positionI=0|
+		       test3: |10>3  true, smalestele =3, positionI= 2|
+		       test4: |3>1  true, smalestele =1, positionI=3| 
+		       so: the smalestele = 1, and the index of it is: 3 */
+
+	cout << "Menor valor: " << smalestele << "\n"; 
+	cout << "Posicao: " << positionI << "\n";
+
+     delete& arr;
+}
