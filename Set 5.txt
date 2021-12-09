@@ -1,0 +1,50 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1181
+
+//ANSWER:
+
+#include<iostream>
+#include<iomanip>    //input and output manipulate library
+using namespace std;
+int main()
+{
+	int number;
+	char letter;
+
+	// INPUTS:
+	float arr[12][12]; //2D array of 12 line and 12 column.
+	cin >> number;  
+	cin >> letter; 
+	for (int i = 0; i < 12; i++)
+	{
+		for (int j = 0; j < 12; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+
+	// PROCESSING AND PRINTING:
+	float sum = 0;
+	if (number <= 11 || number >= 0) 
+	{
+		if (letter == 'S')
+		{
+			for (int i = 0; i < 12; i++)
+			{
+				sum = sum + arr[number][i];
+			}
+			cout << fixed;
+			cout << setprecision(1) << sum << endl;   //sum op.
+		}
+
+		else if (letter == 'M')
+		{
+			for (int i = 0; i < 12; i++)
+			{
+				sum = sum + arr[number][i];
+			}
+			cout << fixed;
+			cout << setprecision(1) << sum / 12 << endl;  //avg op.
+		}
+	}
+}
