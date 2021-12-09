@@ -1,0 +1,82 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1183
+
+//ANSWER:
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	float arr[12][12];
+
+	char letter;
+	cin >> letter; 
+
+	for (int i = 0; i < 12; i++)
+	{
+		for (int j = 0; j < 12; j++)
+		{
+			cin >> arr[i][j];   
+		}
+	}
+
+
+	//SUM THE NUMBERS THAT ARE ABOVE THE MAIN DIAGONAL OF THE ARRAY//
+	float sum = 0;
+	for (int i = 0; i <= 11; i++)
+	{
+		for (int j = 11; j >= 0; j--)
+		{
+			if (i != j)
+			{
+				sum = sum + arr[i][j];
+			}
+			else
+				break;
+		}
+	}
+
+   if (letter == 'S')
+		cout << sum << endl;
+   else if (letter == 'M')
+		cout << sum / 66 << endl;    // 66 is the number of numbers that are above the main diagonal. 
+}
+
+______________________________________________________________________________________________________________________
+
+
+//Another right answer [ more perfect code ]: 
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	float arr[12][12];
+
+	char letter;
+	cin >> letter; 
+
+	float sum = 0;
+	for (int i = 0; i < 12; i++) 
+	{
+		for (int j = 0; j < 12; j++)  
+		{
+			cin >> arr[i][j];   
+
+			if (j > i)  // the numbers in the row 4, column 0, 1, 2, 3, 4 will not sum.
+			{
+				sum = sum + arr[i][j];
+			}
+		}
+	}
+
+
+	if (letter == 'S')
+		cout << sum << endl;
+	else if (letter == 'M')
+		cout << sum / 66 << endl; 
+}
+
+
+    
