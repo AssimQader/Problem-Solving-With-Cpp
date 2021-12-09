@@ -1,0 +1,30 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1146
+
+//ANSWER:
+
+#include<iostream>
+using namespace std; 
+int main()
+{
+	int n;
+
+	int counter = 1;
+	while (counter != 0)
+	{
+			cin >> n;  //test 5
+
+			if (n != 0)
+			{
+				int i;
+				for (i = 1; i < n; i++)
+				{
+					cout << i << " ";   //1 2 3 4
+				}
+				cout << i << endl; //5
+			}
+			else  // n=0 
+				break; 
+	}
+}
+
