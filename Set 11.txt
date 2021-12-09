@@ -1,0 +1,50 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1973
+
+//ANSWER: 
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	long long ns;
+	cin >> ns; // 5
+
+	long long* arr_stars = new long long[ns];  //DECLARATION OF THE ARRAY OF FARMS(STARS).
+
+
+	for (int i = 0; i < ns; i++)
+	{
+		cin >> arr_stars[i];   //test: 1 1 2 1 1
+	}
+
+	long long attackedStars = 0, sum1 = 0, sum2_Nonstolen_Sheeps = 0; 
+
+	for (int i = 0; i < ns; i++)
+		sum1 = sum1 + arr_stars[i]; //sum1= 6
+
+
+	for (int i = 0; i < ns; i++)
+	{
+		if (arr_stars[i] % 2 != 0)  
+		{
+			attackedStars++;    // 1 | 2
+			sum2_Nonstolen_Sheeps = sum1 - attackedStars;   // 6-1= 5 | 6-2= 4 |
+		} 
+		else if (arr_stars[i] % 2 == 0) 
+		{
+		       for (int j = attackedStars; j > 0; j--) //counter= 2
+			{
+				if (arr_stars[j] > 1)   // |2>1 true| |1>1 false, continue| |1>1 false, continue|
+		                     sum2_Nonstolen_Sheeps = sum2_Nonstolen_Sheeps - 1;     // 4-1= 3
+			}
+
+					attackedStars++;   // 3
+					break;
+		}
+	}  
+ 
+	cout << attackedStars << " " << sum2_Nonstolen_Sheeps << "\n";
+
+}
