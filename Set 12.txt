@@ -1,24 +1,34 @@
 
-//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1973
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1984
+//ANSWER:
 
-//ANSWER: IN C : 
 
-#include<stdio.h>
+/* How to reverse an integer number? */
+
+#include<iostream>
+#include<string.h>
 using namespace std;
+
+void RevNum_WithZeros()
+{
+	char num[100];
+	cin >> num;    //test 0125788394  ---> 10 digits
+
+	char temp;    //variable “temp” is for swap processe.
+	int lengthOfNum = strlen(num);    //test: 10, store the length of the array "num" when the user input his number. 
+
+	int i, j;
+	for (i = 0, j = lengthOfNum - 1;/*j=9*/     i != lengthOfNum / 2;  /*i != 5*/       i++, j--)
+	{
+		temp = num[i];
+		num[i] = num[j];
+		num[j] = temp;
+	}
+	cout << num << endl;
+}
+
 
 int main()
 {
-	double volum, diameter;
-	double area, high;
-
-	while ( scanf("%lf%lf", &volum, &diameter) != EOF )     // %lf is the format that store the double value. 
-	{
-		area = (3.14 / 4) * (diameter * diameter);
-		high = volum / area;
-
-		printf("ALTURA = %.2lf\n", high);
-		printf("AREA = %.2lf\n", area);
-
-               // " %.2 " is a format to show only two numbers after the decimal point, it work as ( fixed; setprecision(2); in cpp )
-	}
+	RevNum_WithZeros();
 }
