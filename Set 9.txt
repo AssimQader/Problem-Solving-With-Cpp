@@ -3,7 +3,6 @@
 
 //ANSWER: 
 
-
 #include<iostream>
 using namespace std;
 int main()
@@ -34,6 +33,3 @@ int main()
 	cout << mini + 1 << "\n";   //output: 4 refer to the number 0  with the natural counting from 1,2,3,.....
 	delete& arr_hits;  
 }
-
-
-    
