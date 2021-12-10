@@ -46,9 +46,8 @@ int main()
 
  - Note2: I can improve the process of the code by not declare the variable n , and just make i = j+1 in the second for loop,
    instead of creating a variable n and increase it every time as follow: 
-
-for (int j = 0; j < 5; j++)
-  {
+    for (int j = 0; j < 5; j++)
+     {
 	for (int i = j+1; i < 5; i++) 
          { }
-  }
+     }
