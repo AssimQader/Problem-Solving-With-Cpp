@@ -1,0 +1,54 @@
+
+//PROBLEM: define an array with a specific size you choose, and make the user input the elements of this array as he wants.
+  After that, rearrange the numbers in ascending order once, and in descending order another one.
+
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int arr[5]; 
+	for (int i = 0; i < 5; i++)
+	{
+		cin >> arr[i];   //test: 100 56 102 30 10
+	}
+
+	int n = 1;
+	int empty = 0;
+	for (int j = 0; j < 5; j++)
+	{
+		for (int i = n; i < 5; i++) 
+		{
+			if (arr[j] > arr[i])
+			{
+				empty = arr[j]; 
+				arr[j] = arr[i]; 
+				arr[i] = empty;      // 10 30 56 100 102
+				                    //   0  1  2  3   4
+			}		
+		}
+		n++;  //6  is the last stored value in n.
+	}
+
+	cout << "------------------------------\n";
+
+	for (int x = 0; x < 5; x++)
+	{
+		cout << arr[x] << "  ";
+	}
+}
+
+
+ - Note1: This is the code of ascending order, if want to rearrange in descending order, just change the sign < in the condition:
+   if (arr[j] < arr[i]) {}
+                      
+
+ - Note2: I can improve the process of the code by not declare the variable n , and just make i = j+1 in the second for loop,
+   instead of creating a variable n and increase it every time as follow: 
+
+for (int j = 0; j < 5; j++)
+  {
+	for (int i = j+1; i < 5; i++) 
+         { }
+  }
