@@ -1,0 +1,48 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1066
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int arr[5];
+
+	int even{ 0 };  //same as int even= 0, and same as int even(0) {initialization ways}
+	int odd{ 0 };
+	int positive{ 0 };
+	int negative{ 0 };
+	for (int i = 0; i < 5; i++)
+	{
+		cin >> arr[i];
+		if (arr[i] == 0)
+		{
+			even++;
+		}
+		else if (arr[i] % 2 == 0 && arr[i] > 0 )
+		{
+			even++;
+			positive++;
+		}
+		else if (arr[i] % 2 == 0 && arr[i] < 0)
+		{
+			even++;
+			negative++;
+		}
+		else if (arr[i] % 2 != 0 && arr[i] > 0)
+		{
+			odd++;
+			positive++;
+		}
+		else if (arr[i] % 2 != 0 && arr[i] < 0)
+		{
+			odd++;
+			negative++;
+		}
+	}
+	cout << even << " valor(es) par(es)" << "\n";
+	cout << odd << " valor(es) impar(es)" << "\n";
+	cout << positive << " valor(es) positivo(s)" << "\n";
+	cout << negative << " valor(es) negativo(s)" << "\n";
+}
+
