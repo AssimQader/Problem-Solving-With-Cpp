@@ -1,0 +1,35 @@
+
+//PROBLEM LINK: https://www.urionlinejudge.com.br/judge/en/problems/view/1066
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int p, n1, n2, cheat, accused;
+	cin >> p >> n1 >> n2 >> cheat >> accused;
+	int sum = n1 + n2;
+
+	if (p == 1 && sum % 2 == 0 || p == 0 && sum % 2 != 0)  //player1 choose even and sum is even OR player1 choose odd and sum is odd.
+	{
+		if (cheat == 1 && accused == 1)
+			cout << "Jogador 2 ganha!" << "\n";
+		else if (cheat == 1 && accused == 0)
+			cout << "Jogador 1 ganha!" << "\n";
+		else if (cheat == 0 && accused == 1)
+			cout << "Jogador 1 ganha!" << "\n";
+		else if (cheat == 0 && accused == 0)
+			cout << "Jogador 1 ganha!" << "\n";
+	}
+	else if (p == 0 && sum % 2 == 0 || p == 1 && sum % 2 != 0) //player1 choose odd and sum is even OR player1 choose even and sum is odd.
+	{
+		if (cheat == 1 && accused == 1) 
+			cout << "Jogador 2 ganha!" << "\n";
+		else if (cheat == 1 && accused == 0)
+			cout << "Jogador 1 ganha!" << "\n";
+		else if (cheat == 0 && accused == 1)
+			cout << "Jogador 1 ganha!" << "\n";
+		else if (cheat == 0 && accused == 0)
+			cout << "Jogador 2 ganha!" << "\n";
+	}
+}
