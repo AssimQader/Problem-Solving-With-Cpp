@@ -1,0 +1,59 @@
+
+//PROBLEM LINK: https://codeforces.com/problemset/problem/4/A?fbclid=IwAR2EZwiQ5yJtmDNqAZnfSw3OXgaAOWAc-SuNk-n_naqJNW6sO-U_y6ZKFK4
+//ANSWER:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n; 
+	cin >> n;   //test number 10
+	if (n % 2 == 0 && n != 2)
+	{
+		cout << "YES\n";
+
+		for (int i = 1; i < n; i++)         
+		{
+			int result = n - i;   // result = 10 - 2 = 8
+			if (i % 2 == 0 && result % 2 == 0)  
+			{
+				if (i <= (n / 2))   // |i <= the half of n|, this step is to make the program not reprinting same results such as:(4,6),(6,4).
+					cout << i << "," << result << "  ";
+				else
+					break;
+			}
+		}
+	}	
+}
+
+/* this algorithm will test every number staring from 1 to the half of n.. 
+for example: if n=10 it will test 1,2,3,4,5 and break the loop when i > the half of n, when (i=6) */
+________________________________________________________________________________________________________________________________________
+
+
+/* But I can improve the algorithm by: making the loop starts from 2 not 1 (int i = 2) and increase by 2 not 1 --> ( i+=2 not i++ )  
+   so it will not test the odd numbers(1,3,5,..), by this I saved more time and make the program faster in execute as follow: */ 
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n; 
+	cin >> n;   
+	if (n % 2 == 0 && n != 2)
+	{
+		cout << "YES\n";
+
+		for (int i = 2; i < n; i+=2)         
+		{
+			int result = n - i; 
+			if (i % 2 == 0 && result % 2 == 0)  
+			{
+				if (i <= (n / 2)) // i 
+					cout << i << "," << result << "  ";
+				else
+					break;
+			}
+		}
+	}	
+}
